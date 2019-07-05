@@ -19,3 +19,14 @@
   withDomReady : Boolean
   document dom就绪 无论如何要等待document dom就绪
   返回值:无
+  
+3.Extjs表单提交的几种方式：
+  https://blog.csdn.net/yzp_soft/article/details/7257534?utm_source=blogxgwz4
+  https://www.cnblogs.com/chen1234/p/7536117.html
+
+4.Extjs按钮：
+  https://blog.csdn.net/suyu_yuan/article/details/53066058
+
+  
+    
+ 
