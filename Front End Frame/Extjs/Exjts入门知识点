@@ -15,7 +15,7 @@
  fn : Function
  要执行的回调函数
  scope : Object
- this)回调函数的执行范围
+ (this)回调函数的执行范围
  withDomReady : Boolean
  document dom就绪 无论如何要等待document dom就绪
  返回值:无
