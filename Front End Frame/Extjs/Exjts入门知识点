@@ -1,4 +1,21 @@
 1.什么是Extjs ？
   ExtJS是一个用javascript编写，与后台技术无关的前端ajax框架。
-  因此，可以把ExtJS用在.Net、Java、Php等各种开发语言开发的应用程序中
+  (因此，可以把ExtJS用在.Net、Java、Php等各种开发语言开发的应用程序中)
   
+2.Extjs中的常用函数：
+  Ext.onReady()
+  该方法的调用发生在Document对象加载完毕之后,HTML的onload事件以及image加载之前。
+  第一个参数为加载后该方法调用的函数,第三个参数如果为true则第二个参数将成为fn的执行范围,第三个参数如果没有传递,则默认为true.
+  此函数非常重要,所有的资源都必须加载完毕方可进行ETJS的函数调用.Ext的DOm等都是动态生成的,
+  而onReady的调用方法在所有Document对象都加载完毕的时候,所以为了保障请求是安全的,应该保持所有的处理都在onReady中进行.
+
+ 调用格式：
+ Ext.onReady(Function fn,Object scope,boolean withDomReady)
+ 参数说明:
+ fn : Function
+ 要执行的回调函数
+ scope : Object
+ this)回调函数的执行范围
+ withDomReady : Boolean
+ document dom就绪 无论如何要等待document dom就绪
+ 返回值:无
