@@ -3,4 +3,27 @@
 1.Eclipse和jdk的关系：
   https://blog.csdn.net/hylpeace/article/details/89160098
   
-2.
+  
+2.eclipse和tomcat的版本关系：
+  https://blog.csdn.net/YiQ2018/article/details/81589711
+  另外在eclipse中配置Tomcat路径时，一定是配置到bin目录的父级目录，否则报错。
+  
+  
+3.
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+备注：如果工具版本不匹配将不可用。
