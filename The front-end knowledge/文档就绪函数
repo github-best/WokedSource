@@ -1,0 +1,9 @@
+1.文档就绪函数的特点：页面完全加载之后运行。
+
+2.JS中文档就绪函数的语法格式：----------------------> window.onload = function(){}
+
+3.Jquery中文档就绪函数的语法格式：------------------>  $(document).ready(fn)  或者
+                                                     jQuery(document).ready(fn) 
+                                                     
+
+  
