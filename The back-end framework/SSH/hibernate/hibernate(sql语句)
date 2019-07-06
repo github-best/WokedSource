@@ -1,6 +1,9 @@
-1.hibernate对数据库操作用两种sql语句:-------------------------> (hql和sql)
+1.hibernate对数据库操作可以用两种sql语句:-------------------------> (hql和sql)
   hql与sql的区别:
   sql 面向数据库表查询
   hql 面向对象查询
   hql ： from 后面跟的 类名＋类对象 where 后 用 对象的属性做条件
   sql： from 后面跟的是表名 where 后 用表中字段做条件查询 
+
+
+
