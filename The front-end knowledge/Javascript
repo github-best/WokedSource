@@ -1,10 +1,11 @@
 1.什么是javascript？
   JavaScript缩写为JS.它是一种脚本语言,它是一种直译型语言，浏览器一边编译，一边执行。(java语言特点：解释型语言)
 
-2.JS数据类型( 6种 )：
+2.JS数据类型( 7种 )：
   数字类型：Number
   字符串类型：String
   布尔类型：Boolean
+  函数类型：function
   空值型：Null
   未定义：Undefined
   Object：(混合类型/对象类型)
@@ -18,10 +19,10 @@
   
   3.json对象： var x = {"firstName":"Bill","lastName":"Gates"}; 
   
-  4.
+ 
   
 4.JS输出函数：
-  ①.window.alert() ------------>写入警告框
+  ①.window.alert()或者alert() ------------>以警告框的形式输出
   ②.document.write() ------------------>输出到页面
   ③.document.getElementById(id)-------->输出到页面
   ④。console.log()--------------------->输出到浏览器控制台
