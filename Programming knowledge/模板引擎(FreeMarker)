@@ -7,7 +7,6 @@
 
 
 2.freemarker的使用方法:
-
 　第一步：将freemarker的jar包添加进项目中。如果你建立的是maven项目，那么在pom.xml中直接引入依赖，maven会自动给下载这个jar包。
 　第二步：freemarker的运行并不依赖web容器，可以在java工程中运行。这样我们就可以创建一个测试方法进行测试
 　第三步：创建一个configuration对象。
