@@ -23,11 +23,11 @@
   
 4.JS输出函数：
   ①.window.alert()或者alert() ------------>以警告框的形式输出
-  ②.document.write() ------------------>输出到页面
+  ②.document.write()/document.writeln(); ------------------>输出到页面
   ③.document.getElementById(id)-------->输出到页面
   ④。console.log()--------------------->输出到浏览器控制台
           
    
-  
+ 5.document.write("<br/>");换一行 
  
    
