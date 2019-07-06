@@ -1,1 +1,87 @@
 1.什么是Ajax？
+  可简单理解为：异步javascript脚本。
+  Ajax就是用JS发起一个请求，并得到服务器返回的内容。这跟以前的技术最大的不同点在于「页面没有刷新」，改善了用户体验。
+
+2.Ajax的优点：
+  在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容，
+  减轻了服务器的负担,并且可以让web页面有应用程序的效果和相应特征,给用户更好的体验。
+  
+  
+3.Ajax函数的几种语法格式(4种)：
+  ①. $.ajax(url,callback)  此方法也可以带参数
+   
+     第一个参数是请求的url，第二个参数是回调用函数，json数据封装在result，需要对result的json数据进行解析
+     $(document).ready(function(){
+    	  $("button").click(function(){
+    	    		$.ajax({url:"http://localhost:8080/ssm01/getChildrenList.action",
+    	    			success:function(result){
+    	   		    //eval函数解析json数据
+    	    			var array=eval(result);
+    	    			var texts="解析json数据如下:<br>";
+    	    			for(var i=0;i<array.length;i++){
+    	    				texts+=array[i].name+"--"+array[i].age+"---"+array[i].gender+";<br>";
+    	    			}
+    	    			$("#div1").html(texts);
+    	    		}});
+    	      });
+       });
+       
+       
+  ②.$.get(url,function(){},'json');
+
+     
+  ③.$.post(url，data,callback) 带参数
+    第一个参数是请求的url，
+    第二个参数是请求参数，
+    第三个参数是回调用函数，json数据封装在result，需要对result的json数据进行解析
+    
+    	  $(document).ready(function(){
+    	    	$("button").click(function(){
+    	    		$.post("http://localhost:8080/ssm01/getChildrenList.action",{
+    	    			name:"菜鸟教程",
+    	    			url:"http://www.runoob.com"
+    	    		},
+    	    		function(data,status){
+    	    		    //eval函数解析json数据
+    	    			var array=eval(data);
+    	    			var texts="解析json数据如下:<br>";
+    	    			for(var i=0;i<array.length;i++){
+    	    				texts+=array[i].name+"--"+array[i].age+"---"+array[i].gender+";<br>";
+    	    			}
+    	    			$("#div1").html(texts);
+    	    		});
+    	    	});
+    	  });
+        
+  ④.ajax.json()
+        
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+博客参考地址：
+https://blog.csdn.net/bradmatt/article/details/80399791
+https://blog.csdn.net/dezhonger/article/details/70211484
+https://blog.csdn.net/dreamweaver_zhou/article/details/76790588
+https://blog.csdn.net/wickedvalley/article/details/65937854
