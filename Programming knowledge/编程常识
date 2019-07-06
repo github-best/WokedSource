@@ -14,3 +14,9 @@
 
 3.啥是javaSE,javaEE,javaME？
   javaME就是用来开发嵌入式的，javaSE就是用来开发桌面的，javaEE就是用来开发企业端的
+  JavaSE代表Java标准版本，通常用于开发桌面应用程序，形成核心/基本API(如简单的java项目)。
+  JavaEE表示运行在服务器上的应用程序的Java企业版，例如Web站点(如javaWEB程序的开发)。
+  Java ME代表Java微版本，用于在资源受限的设备(小型设备)上运行的应用程序，如手机，例如游戏。(如andriod开发只需在eclipse中加一个andriod插件)。
+  JavaSE是Java的基础，主要针对桌面程序开发；JavaEE是针对企业级应用开发；而JavaME是主要针对嵌入式设备软件开发。
+  windows的x86和x32代表32位操作系统 ，x86是以前intel对32位系统的传统叫法，如486、586，他们都是32位的。x64代表64位操作系统。
+  安装包：windows系统选择tar.gz, linux系统选择.zip包
