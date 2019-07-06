@@ -37,29 +37,42 @@
   4.FTL指令：FreeMarker指令，和HTML标记类似，名字前加#予以区分，不会输出
   
   =================================================================================
-  
-  
+    
+5.freemaker常用指令：实际在形式上相当于html标签前加一个#，用于与html标签区分。
+    include 指令
+        include指令的作用类似于JSP的包含指令，用于包含指定页，include指令的语法格式如下
+         <#include filename [options]
+          在上面的语法格式中，两个参数的解释如下
+          a、filename：该参数指定被包含的模板文件
+          b、options：该参数可以省略，指定包含时的选项，包含encoding和parse两个选项，encoding指定包含页面时所使用的解码集，而parse指定被
+             包含是否作为FTL文件来解析。如果省略了parse选项值，则该选项值默认是true
+     import指令
+        该指令用于导入FreeMarker模板中的所有变量，并将该变量放置在指定的Map对象中，import 指令的语法格式如下
+        <#import path as mapObject>
+        在上面的语法格式中，path指定要被导入的模板文件，而mapObject是一个Map对象名，通过这行代码，将导致path模板中的所有变量都被放置
+        在mapObject中
+        <#import "/lib/common.ftl" as com>
+     
+     assign指令
+        它用于为该模板页面创建或替换一个顶层变量
+	
+     
+     备注：实际上，使用标签时前面的#符号也可能变成@，如果该指令是一个用户指令而不是系统内建指令时，应将#符号改为@符号
+
+	
+	
+6.FreeMarker的插值有如下两种类型
+  1.通用插值：${expr}
+  2.数字格式化插值：#{expr}或者#{expr;format}
+	
+     
+     
+     
+     
+     
+     
   
 
-   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
   (freemaker)
