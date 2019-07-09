@@ -44,6 +44,8 @@
   字段后+ bigint unsigned<--------------------------> BigInteger
   bigint(未加unsigned)<-----------------------------> Long
   
+  备注：char和varchar的区别：char一旦申明，长度固定，varchar根据实际数据长度开辟内存，长度可变。
+  
   
   参考博客地址：https://blog.csdn.net/Hyo555/article/details/81943340
 
