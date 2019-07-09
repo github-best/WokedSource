@@ -1,0 +1,48 @@
+<!DOCUTYPE=html>
+<html>
+<head>
+
+</head>
+<body>
+ <h1>html练习第一天！！！<h1>
+
+<!-- 引入script代码-->
+<script language="javascript">
+ <!-- 文档就绪函数-->
+
+ window.onload = function(){
+	 hello();
+	currentDate();
+	cfbiao();
+ 
+ }
+ 
+ function hello(){
+  <!--弹出框 -->
+   alert("按我！");
+ }
+ function currentDate(){
+   var current = new Date().toLocaleString();
+   <!--输出当前时间-->
+   document.write(current);
+   
+   <!--换行-->
+	document.write("</br></br>");
+   
+ }
+ function cfbiao(){
+	for(var i=1;i<10;i++){
+		for(var j=1;j<=i;j++){
+		document.write(j+"x"+i+"="+i*j+"\t");
+	    }
+	<!--换行-->
+	document.write("</br>");
+	}
+ 
+ }
+   
+
+</script>
+</body>
+
+</html>
