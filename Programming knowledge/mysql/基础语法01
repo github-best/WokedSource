@@ -35,12 +35,14 @@
   约束删除博客：https://blog.csdn.net/qq_34332010/article/details/77072759
   
 
-4.数据库数据类型和实体数据类型的匹配关系：
+4.数据库字段数据类型和实体数据类型的匹配关系：
 
-  字段                     实体属性类型
-  varchar/char/text <------------------------------>String
-  tinyint/smallint/int <--------------------------->Integer
-  date/year <-------------------------------------->Date
+        字段                                   实体属性类型
+  varchar/char/text <------------------------------> String
+  tinyint/smallint/int <---------------------------> Integer
+  date/year <--------------------------------------> Date
+  字段后+ bigint unsigned<--------------------------> BigInteger
+  bigint(未加unsigned)<-----------------------------> Long
   
   
   参考博客地址：https://blog.csdn.net/Hyo555/article/details/81943340
