@@ -1,6 +1,6 @@
 1.mysql数据库索引类型：
-  1.primary key-----------------------> 主键索引
-  2.unique ---------------------------> 唯一索引
+  1.primary key-----------------------> 主键索引（唯一且不能为null）
+  2.unique ---------------------------> 唯一索引（唯一可以为null）
   3.index ----------------------------> 普通索引
   4.fulltext--------------------------> 全文索引
   
@@ -12,7 +12,30 @@
   注意：组合索引字段必须是连续的，否则索引失效。
   
 3.数据库字段约束，字段加备注信息：
-  1.字段约束：not null(字段值，不能为空)，
+  mysql约束的种类(4种)：
+  -------> 非空约束(not null)
+  -------> 唯一性约束(unique)
+  -------> 主键约束(primary key) PK
+  -------> 外键约束(foreign key) FK
+    
+  constraint：英[kənˈstreɪnt] 美[kənˈstreɪnt]  n.	限制; 限定; 约束; 严管;
+  constraint的主要作用：
+  -------> 给约束字段取别名,方便以后通过这个名字来删除这个约束，如下：
+  创建索引：constraint user_email_unique unique(email)
+  根据约束别名删除索引：alter table 表名 drop key 约束名;
+  
+  comment:英[ˈkɒment] 美[ˈkɑːment]  n.议论; 评论; 解释; 批评; 指责;
+  comment的主要作用：
+  -------> 给字段加注释，方便以后查看建表语句时，理解字段含义。
+
+  
+  
+    
+  constraint约束学习博客地址：
+  参考博客：https://blog.csdn.net/w_linux/article/details/79655073
+  msyql数据库null值问题：https://blog.csdn.net/weixin_42442847/article/details/81207505
+  约束删除博客：https://blog.csdn.net/qq_34332010/article/details/77072759
+
     
   
  
