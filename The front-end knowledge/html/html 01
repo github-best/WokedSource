@@ -3,6 +3,13 @@
   2.<meta charset="utf-8"/> ---------> 告诉浏览器此文件以UTF-8编码格式进行解码。
 
 
+2.如何在html文件中引入javascript代码？
+  script标签也是html标签，其作用是用来引入Javascript代码，不论是内部Javascript代码还是外部Javascript代码。
+  其实引入Javascript代码有两种写法
+  第①种<script language="Javascript"></script>
+  第②种<script type="text/javascript"></script>
+
+
   
   
   
