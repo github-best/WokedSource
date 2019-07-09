@@ -18,7 +18,7 @@
   -------> 主键约束(primary key) PK
   -------> 外键约束(foreign key) FK
     
-  constraint：英[kənˈstreɪnt] 美[kənˈstreɪnt]  n.	限制; 限定; 约束; 严管;
+  constraint：英[kənˈstreɪnt] 美[kənˈstreɪnt]  n.限制; 限定; 约束; 严管;
   constraint的主要作用：
   -------> 给约束字段取别名,方便以后通过这个名字来删除这个约束，如下：
   创建索引：constraint user_email_unique unique(email)
@@ -29,12 +29,21 @@
   -------> 给字段加注释，方便以后查看建表语句时，理解字段含义。
 
   
-  
-    
   constraint约束学习博客地址：
   参考博客：https://blog.csdn.net/w_linux/article/details/79655073
   msyql数据库null值问题：https://blog.csdn.net/weixin_42442847/article/details/81207505
   约束删除博客：https://blog.csdn.net/qq_34332010/article/details/77072759
+  
+
+4.数据库数据类型和实体数据类型的匹配关系：
+
+  字段                     实体属性类型
+  varchar/char/text <------------------------------>String
+  tinyint/smallint/int <--------------------------->Integer
+  date/year <-------------------------------------->Date
+  
+  
+  参考博客地址：https://blog.csdn.net/Hyo555/article/details/81943340
 
     
   
