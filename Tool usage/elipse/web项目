@@ -1,4 +1,4 @@
 1.在建动态web项目的时候，忘了勾自动生成web.xml文件，怎么办，要手写一个吗？
-  在项目上右键------》 Java EE Tools-------》Generate Deployment descriptor stub
+  在项目上右键------》 Java EE Tools-------》Generate Deployment descriptor stub (生成部署描述符存根)
 
 2.
