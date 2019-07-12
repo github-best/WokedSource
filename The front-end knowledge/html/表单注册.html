@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+	<head>
+		<!--头部：存放基本属性信息 -->
+		<meta charset="utf-8"/>
+		
+		
+		<!--style标签引入css-->
+        <style type="text/css">
+		
+		<!-- 定义css样式，作用于标签上-->
+		
+		  /*选中所有的td元素*/
+		  
+		 h1{
+		        /*设置元素内的文本水平居中*/
+		       /* text-align: center;*/
+		       /* font-size:30px;*/
+			   
+			   /*设置相对位置*/
+			    position:relative;
+				 right:60%;
+				 top:45%;
+			 
+	        }
+	   
+		  
+		     
+		  table{
+		        border: 1px solid blue;
+		        border-collapse:collapse;
+		       /* width:30%;*/
+		        /*自动居中*/
+		        /*margin-left: auto;*/
+		        /*margin-right: auto;*/
+				position:relative;
+				 left:30%;
+				 top:45%;
+				/*设置相对位置*/
+				
+				
+				
+		        /*给表格设置背景颜色*/
+		        background-color: #DDD;
+									
+	        }
+			   
+			
+			     td{
+		        border: 2px solid blue; 
+		        /*使得单元格边框合并*/
+		        border-collapse:collapse;
+		        padding: 5px;
+		        
+		       
+	        }
+		
+			
+	
+	      
+	    
+			
+	
+			
+			
+	        
+        </style>
+		
+	</head>
+	<body>
+		
+		<!--段落标签-->
+		<h1 align="center">hello,欢迎注册 !</h1>
+		
+		<!--hr标签表示：下划线-->
+		<!--<hr width="130px" seize="100px" 
+color=red></hr>-->
+		
+		
+		<!-- 以下是一个表单标签-->
+		<form action="#"> <table>
+			<tr>
+				<td>用户名:</td>
+				
+				<!---input输入框-->
+				<td><input type="text" name="username"/></td>
+			</tr>
+			
+			<tr>
+				<td>密码:</td>
+				<td><input type="password" name="pwd"/></td>
+			</tr>
+
+			<tr>
+				<td>性别:</td>
+				<td><input type="radio" name="gender" 
+value="man"/>男 <input type="radio" name="gender" 
+value="woman"/>女</td>
+			</tr>
+			
+			<tr>
+				<td>爱好:</td>
+				
+				  <!-- input复选框，like模糊匹配 -->
+				<td><input type="checkbox"  name="like" 
+value="basketball"/>篮球
+				     <input type="checkbox" name="like" 
+value="football"/>足球
+				    <input type="checkbox"  name="like" 
+value="volleyball"/>排球
+				</td>
+			</tr>
+
+				<tr>
+				<td>城市:</td>
+				<td>
+				
+				    <!-- 
+下拉框标签，一个下拉框标签中可以有多个option
+选项标签 -->
+				    <select name="city">
+					
+					    <!-- 选项标签 -->
+					    <option value="bj">北京</option>
+					    <option value="sh">上海</option>
+					    <option value="gz">广州</option>
+					    <option value="sz">深圳</option>
+					    <option value="cd">成都</option>
+					    <option value="cq">重庆</option>
+					    <option value="wh">武汉</option>
+					    <option value="tj">天津</option>
+					    <option value="szh">苏州</option>
+						
+				    <select/>
+					
+				</td>
+				<tr>
+					<td>验证码:</td>
+					<td>
+						<input type="text" name="verifycode"/>
+						
+						<!-- 图片加载标签 -->
+						<img 
+src="D:\CGB1812\第二阶段\HTML\day04.html\da
+y04-html+css\example\vc.jpg" width="80px" 
+height="20px"/>
+						
+						<!--按钮标签-->
+						<input type="button" value="换一个"/>
+					</td>
+				</tr>
+				<tr>
+					<td>自我描述</td>
+					<td>
+					    <!-- 文本框标签-->
+						<textarea cols= "30" rows="5" 
+name="description" 
+placeholder="请输入描述信息..."></textarea
+>
+					</td>
+				</tr>
+
+			    <tr>
+				    <td colspan="2" style="text-align:center;">
+					
+					  <!-- 提交按钮-->
+					    <input type="submit" value="注册"/>
+					    <input type="submit" value="登陆"/>
+				    </td>
+			    </tr>
+
+		   </table></form> 
+			
+		
+	</body>
+</html>
