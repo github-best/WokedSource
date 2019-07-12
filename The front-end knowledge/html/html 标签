@@ -12,4 +12,5 @@
      
      
   
-2.select下拉框
+2.select标签下拉框属性有：name，一个select标签中可以有多个option选择标签：option标签属性有：value。
+
