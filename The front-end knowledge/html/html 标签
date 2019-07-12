@@ -1,10 +1,14 @@
+
 前端网页常用的标签：
 
 1.input标签，input标签有如下几个属性：
-  type，name 2个属性
+  如下input标签属性是：type，name
   若：type=radio------------------------> 点选按钮
      type=checkbox----------------------> 复选框
      type="text"------------------------> 文本输入框
+     
+  input按钮标签属性是：type，value   
+     type="button"----------------------> 按钮
      
      
   
