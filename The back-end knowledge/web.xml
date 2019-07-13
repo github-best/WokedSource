@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>servlet_data_interaction</display-name>
+  
+  <!--动态web项目xml文件配置解析 -->
+  
+  <!-- 浏览器默认访问 WEB-INF目录的如下页面 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- 指定HttpServlet的具体实现类，也即本次 会话的具体类 的 名称， 以及包的全路径-->
+  <servlet>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <servlet-class>com.servlet.data.interaction.mvc.HelloWorld</servlet-class>
+  </servlet>
+  
+  
+  
+  <!-- servlet映射：post、get的请求路径，这个请求路径是可以自定义的-->
+    
+  <! 这里的 url-pattern值，有如下的几种情况：-->
+  <!--
+        第一种：精准匹配  -------- /demo
+        第二种：模糊匹配  ---------   /demo/*  或者  *.action 或者  *.jsp 等  
+        第三种：   ------------  /* 根路径下的 任意路径
+        第四种：  ------------  /  拦截所有
+   
+        注意： 模糊匹配不能混搭使用，混搭将会是无效的路径，浏览器解析不了。 -->
+   
+  <servlet-mapping>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <url-pattern>/test/Login.html</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+
+
+
+
