@@ -30,6 +30,11 @@
  另外：如果已经进入了dos窗口，想在dos窗口打开某个文件怎么办？
  cd到文件的路径即可，命令为：----------> cd:文件路径。
  
+6.dos窗口如何运行jar包文件？
+  命令：java -jar Demo.jar
+  其他命令参考博客：
+  https://blog.csdn.net/u014034329/article/details/78076547
+ 
  
  
  
