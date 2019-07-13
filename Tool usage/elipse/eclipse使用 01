@@ -1,0 +1,11 @@
+1.eclipse如何设置前后背景色，如何设置字体颜色？
+  a.设置背景色：
+  步骤：window--》preferences--》
+       General--》
+       Editors--》Text Editors-------》Appearance color options---》Background color---》color
+       
+  b.设置字体颜色：
+  步骤：window -- preferences---》
+       java --editor --syntax coloring。
+       
+   注：syntax  英 /'sɪntæks/  美 /'sɪntæks/  n. 语法；句法
