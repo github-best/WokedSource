@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>servlet_data_action</display-name>
   
-  <!-- 默认访问页面 ，默认访问页面-->
+  <!-- 默认访问页面,支持以下6种命令格式-->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -24,12 +24,12 @@
     <!-- servlet名称，自己可以随意定义，但尽量有意义 -->
   	<servlet-name>HelloWorldServlet</servlet-name>
   	<!-- servlet映射的get、post提交路径-->
-  	<!-- url-patten取值问题-->
+  	<!-- url-patten的取值问题-->
   	<!-- 1.表单提交时其值等于action的值-->
   	<!-- 2./* 表示匹配项目下的所有路径-->
   	<!-- 3./demo 指明具体路径-->
   	<!-- 4.*.jsp 或者 *.html 或者  *.htm 或者 *.do 或者 *.action ... 后缀型匹配-->
-  	<!-- 5./ 表示匹配项目下的所有路径，排除后缀型匹配;/*也是匹配所有路径，包括后缀型路径-->
+  	<!-- 5./ 表示匹配项目下的所有路径，排除后缀型匹配; /*也是匹配所有路径，包括后缀型路径-->
   	<!-- 6. 2和4两种情况不能搭配使用，否则报错-->
   	<!-- 7.如果路径不是后缀型匹配，/ 根路径不能省略，如果是form表单提交这里的test必须为action值-->
   	
