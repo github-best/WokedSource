@@ -4,3 +4,8 @@
 
 2.前后端数据是如何交互的：
   方式一： Jquery、Ajax、
+
+
+3.如何在jsp页面上引入jstl标签库?
+  
+  参考博客: https://blog.csdn.net/daolingren/article/details/51112102
