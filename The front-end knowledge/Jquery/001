@@ -1,1 +1,7 @@
-
+1.什么是Jquery？
+  jQuery是一个快速、简洁的JavaScript框架。
+  
+2.html中如何引入Jquery？
+  既然Jquery是js的一个框架，那么应该和引入js文件一样：
+  规则：
+  <script src="下载下来的Jquery路径" type="text/javascript" > </script>
