@@ -104,6 +104,7 @@
        			   resultType的值，一般情况下就是pojo对象的全路径，但也可根据需要返回其他数据类型。
        多表查询的时候：vo对象的属性和pojo对象的属性部分相同，此时select标签中的返回值类型为：resultMap，
        			   resultMap中的ofType值，就是vo对象的全路径。
+	
 
 
     5.PageInfo对象、VO对象、List<VO>对象的属性值，如何渲染到页面？
@@ -166,6 +167,7 @@
           研究的是老师这个对象，相对于学生对象而言，属于一对多关系。	   
 		关于多表操作
 		学习博客地址：https://blog.csdn.net/kisscatforever/article/details/79476614
+		
 
     ③.mybatis3动态sql提供了如下标签：
       1.<if test=""></if>
@@ -185,7 +187,7 @@
         
       
 
-	     
+	    
 	          
 	           
 	             
