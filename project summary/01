@@ -104,6 +104,7 @@
        			   resultType的值，一般情况下就是pojo对象的全路径，但也可根据需要返回其他数据类型。
        多表查询的时候：vo对象的属性和pojo对象的属性部分相同，此时select标签中的返回值类型为：resultMap，
        			   resultMap中的ofType值，就是vo对象的全路径。
+	      注意：如果是一对多关系，也可选择继承，返回值为resultType="vo类"。
 
 
     5.PageInfo对象、VO对象、List<VO>对象的属性值，如何渲染到页面？
