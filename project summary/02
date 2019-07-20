@@ -1,0 +1,369 @@
+项目体会：
+一、简单的管理系统项目做法分析：
+  ~SSM动态web项目  如：食品安全管理系统
+   时间：2019.7.13开始做：
+   前端主要技术：
+   1.页面：jsp
+   2.javascript 函数，Ajax请求，Jquery选择器，CSS，表单（form），input标签，select下拉框标签
+
+   后端SSM框架：
+   主要需要注意的有：
+   1.页面传值到后端时，需要做非空判断，非空串判断。
+   2.写sql语句要在mapper.xml文件中写查询语句。
+    写查询语句的时候，注意处理好一对一，一对多关系。
+    什么是一对一，一对多呢？
+
+    其实一个SSM管理系统，其实就是：
+    --------------------------------------> 页面+动态的数据。
+
+    页面：
+    主要由 html, js,Jquery,CSS,Ajax 来完成。
+    
+    动态的数据流向：
+    数据入库：页面数据------------>java对象属性值----------->数据库字段值。
+    注意：这里有3中类型的值：页面值、java对象属性值、数据库字段值。
+    数据出库：数据库字段值------------->java对象属性值------------>页面数据值。
+
+   ~所以对于后端开发人员来说，主要需要掌握的就是：
+   3.页面值<----------->java对象属性值之间的转换规则？
+    1.后端控制层，是根据HtttpRequest对象，调用request.getParameter(String name)方法，将页面值，转换成 
+      对象的属性的。
+    2.后端控制层接收页面传值的空值判断：
+     由于：request.getParameter(String name)方法，接受到的数据是字符串、字符串数组，
+     如果用户非常规操作，则可能导致很多报错：
+     1.如果用户不输入数据，用String来接收数据，接受到的数据是空白啥都没有；
+      如果用String[]来接收数据，得到的是null对象。
+      啥都没有对应后端控制层的--------> "" 或者 str.length()==0
+      所以如果用户在页面上不输入数据：
+      后端主要判断：是否为-----> null、是否为------> ""
+    
+     2.如果用户输入的数据，在后端接收后，数据类型无法转换成对象的属性，则也会报错。  
+      如果后端pojo对象，属性数据类型不是字符串或字符串数组，
+      则需要考虑用户输入的格式是否符合要求，否则将报格式错误异常。
+         
+     3.如果输入的是null，''，""，'  '，"  "，等特殊字符，
+      若数据类型匹配，后端也不会报错，控制层会把传过来的数据当做null，''，""，'  '，"  "等字符或字符串来处理。
+      
+     StringUtils.isEmpty()、StringUtils.isBlank()用法参见博客：
+     https://blog.csdn.net/a1102325298/article/details/80410740
+     注意：后端从前端接收到数据之所以报错，主要是因为：
+         a.让空值null，去调用方法。
+         b.类型转换不了，类型转换异常。如让非数字字符串转整数。
+         
+    综上所述：页面值<----------->java对象属性值之间的数据类型匹配规则处理方法：
+         1.null值、""(空串)判断。
+         2.用户输入的数据格式，进行格式判断。
+
+
+    3.html表单中常用到的几个标签：
+     1.input 文本输入框标签 type="text"      格式：<input name="hello" type="text"/>
+     2.input 单选按钮     type="radio"      格式：<input name="hello" type="radio" value="男"/> 
+     3.input 复选框       type="checkbox" 格式：<input name="hello" type="checkbox"/ value="男"/> 
+     4.input 普通按钮     type="button"
+     5.input 提交按钮     type="submit"
+     注意：input标签中还有一个重要的属性---> name属性，requst对象是根据name的值作为参数，
+         对用户输入的数据进行取值的，如果input标签中没有给name属性，request对象调用getParameter(String name)
+         得到的的值为：null；
+         单选按钮，复选框，也是根据name属性作为参数，value属性的值，作为传给后端的数据。
+
+     6.select 下拉框，格式：
+       <select name="str">
+         <option value="hello">hello</option>
+         <option></option>
+         <option></option>
+          ...
+       </select>
+       用法：request根据select标签的name属性值为参数，option中的value属性值作为传给后端的数据，对于双标签而言，
+       value可以省略，默认值为标签内页面上显示的值。
+       
+     7.textarea文本输入框标签
+       格式：<textarea cols="30" rows="5" name="description" placeholder="请输入描述信息..."></textarea>
+       用法：request根据标签的name属性值为参数，把用户数据的数据传到后端控制层。
+       placeholder 占位符，用来渲染效果用。
+      
+     
+ 
+     8.form 表单标签
+      格式：<form action="url" method="post"> </form>
+      注意：其中的action值为---------------->web.xml文件中的 <url-pattern>/url</url-pattern>
+      method值为表单提交方式。
+
+    4.管理系统SSM,web项目中：3种java值对象：
+      ①.pojo对象，实现与数据库字段的映射关系，但是pojo对象属性可以"包含"数据库表字段的映射关系。
+        即pojo的属性可以多于数据库中的字段映射关系，但依然可以用此pojo对象持久化到数据库，
+        因为数据库持久化的是需要的pojo对象的属性值，而不是整个对象。
+      ②.VO对象，即值对象，页面中显示的某一条记录。值对象的属性一样可以"包含"页面字段的映射关系。
+        因为页面显示的是需要的VO对象的属性值，并非整个对象。
+      ③.PageInfo页面对象，此对象一般包含：
+        integer statIndex(起始页)，Integer pageSize(页面大小)，List<VO> list(一个页面中显示的记录集合)。
+
+      综上所述：
+       pojo对象，作用：持久化到数据库。
+       vo对象，显示页面的行记录。
+       单表查询的时候：vo对象可以等于pojo对象，此时select标签中的返回类型为：resultType，
+       			   resultType的值，一般情况下就是pojo对象的全路径，但也可根据需要返回其他数据类型。
+       多表查询的时候：vo对象的属性和pojo对象的属性部分相同，此时select标签中的返回值类型为：resultMap，
+       			   resultMap中的ofType值，就是vo对象的全路径。
+
+
+    5.PageInfo对象、VO对象、List<VO>对象的属性值，如何渲染到页面？
+     方法：一般情况下，可通过Jquery选择器为标签赋值或取出值到页面。
+     如：Jquery，id选择器取值
+        $("#idName").val();
+        另外注意：为标签赋默认值-------------->  $("#idName").val(value);
+
+    6.SSM框架管理系统
+      页面标签name属性值、pojo对象属性名称(vo对象属性名称)、数据库表字段名称的关系：                              
+      标签中的name属性值==VO对象的属性名(pojo对象的属性名) <---------------->数据库表中字段名。
+                                                   驼峰映射
+    7.什么叫pojo对象，什么叫vo对象？
+     简单来说：①.只要包含了数据库表中的全部字段映射的对象----->都叫pojo对象。
+            ②.只要包含了某个页面中需要的所有数据的对象------->都叫做vo对象。
+
+    8.用户在页面上进行的增、删、查、改操作时，具体看，会影响哪些表，在控制层，一般用vo对象接参，
+     然后调用公司封装好的方法，即可。如果没有，自己需要写sql语句。
+     注意：对数据表数据的操作，SSM框架中，实际上是通过字段绑定pojo对象属性进行的，
+         持久的是：表字段需要的对象的属性，并非整个对象。
+
+    9.如果页面上需要显示的数据，单表就能满足，则此时：vo对象==pojo对象。
+
+   4.(SSM框架)java对象<------------->数据库表之间的操作怎么完成？
+    ①.单表的操作sql语句该怎么写？
+     a、mapper.xml文件中：<mapper namespace="dao接口的全路径"></mapper>
+     b、具体方法操作的标签，id值="dao中定义的方法名" resultType="pojo类全路径" / 需要的返回类型，如integer。
+
+    ②.多表操作sql语句该怎么写？
+     a.如果是一对一关系，解决方式2种：
+      ①.vo类继承主表的pojo类，然后添加要查询的字段对应的实体属性即可，返回值类型依然为：resultType="vo类全路径"
+      ②.在主pojo类中添加从pojo类对象属性，返回值类型为resultMap，在resultMap中添加association标签即可。
+	    resultMap，用来描述字段和实体属性的映射关系，
+	    在执行完sql后，把查出来的值保存到VO对象的属性中。
+	    具体实现：
+	     如 <select id="methodName" resultMap="mapId">查询sql</select>
+			 <resultMap id="mapId" type="vo类的全路径">
+			   <id clumn="数据库字段id" property="vo对象属性id" jdbcType="该字段数据库中的类型"/>
+			   //注意以上id列，一样会被映射到vo对象的id属性中。
+			   <result clumn="数据库字段名" property="vo对象属性名" jdbcType="字段数据库数据类型"/>
+			   <result .../>
+			   ...
+			 </resultMap>
+			 注：resultMap中，为什么有个id标签列，而不全是result标签列？
+			    因为resultMap标签中，还可以写association、collection标签，
+			    作用就是用来区分和其他表中的id，一样会被映射到vo对象的属性中。
+
+	 b.如果是一对多，或者是多对多，解决方式：
+	  第一步：在上一级主pojo类中添加此类的List集合属性，...， 在最后一级pojo类的上一级pojo类中添加此类的对象属性。
+	  第二步：添加完之后，在resultMap标签中添加collection标签映射，最后一级一般为association便签映射。
+	  第三步：写要查询的sql语句，写法同普通操作数据库的sql语句写法一样。
+	  注意：在一对多的情况下，可能出现一对一，
+	       总之：一对多，主类添加List<从类>属性，resultMap标签中添加collection标签映射；
+	           一对一，主类添加从类对象属性，resultMap标签中添加association标签映射。
+
+	 c.多表操作，常说的一对一，一对多关系，研究的对象是谁？
+       答：研究的是：对象pojo，而不是数据库表。
+          如：数据库有teacher表，student表，2张表，
+          说一个老师对应多个学生，属于一对多关系。
+          研究的是老师这个对象，相对于学生对象而言，属于一对多关系。	   
+		关于多表操作
+		学习博客地址：https://blog.csdn.net/kisscatforever/article/details/79476614
+
+    ③.mybatis3动态sql提供了如下标签：
+      1.<if test=""></if>
+      2.<where></where>
+        <where>标签的作用：
+        a.如果没有一个条件满足，sql语句不会不会含有where关键字。
+        b.若有一个条件满足了情况，若语句的开头为“AND”或“OR”，where元素也会将它们去除。
+      3.choose, when, otherwise 这一套标签相当于java基础语法中的：switch case default
+      4.<foreach item="item" index="index" collection="list"
+          open="(" separator="," close=")">
+                #{item}
+        </foreach>
+        如在进行批量删除的时候，就灵活运用了foreach标签，
+        运用场景：如果前端传过来的数据是一个集合，此时就需要foreach标签进行遍历。
+      5.若sql语句写在dao层，则需要script标签。
+
+        
+      
+
+	     
+	          
+	           
+	             
+	   
+	    
+	   
+	             
+    
+    
+        
+    
+      
+        
+
+      
+    
+
+         
+   
+     
+     
+
+
+
+     
+               
+   
+
+ 
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+   
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
