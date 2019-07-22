@@ -18,7 +18,7 @@
   未定义：Undefined
   Object：(混合类型/对象类型)
   
-3.JS、 Jquery中属于Object类型的量：
+3.JS 中属于Object类型的量：
   1.数组： var arr = [a,b,c,...]
           var arr = new Array(40, 100);  // 创建包含两个元素的数组（40 和 100）
           var arr = new Array(40);       // 创建包含 40 个未定义元素的数组！！！
