@@ -25,6 +25,9 @@
           如果为false ，document.getElementById("formatError").innerHTML="<font color = 'red'>日期格式错误!</font>";
           如果为true，document.getElementById("formatError").innerHTML="";
           
+  时间格式的判断参考博客：
+  https://blog.csdn.net/weilee2009/article/details/8566962#commentBox
+          
   
 
 
