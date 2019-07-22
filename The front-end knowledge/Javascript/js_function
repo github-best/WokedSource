@@ -2,4 +2,6 @@
   (function(win){ })(this);
 
 2.加载完页面之后，执行：
-  $(function(){ });
+  $(function(){ })，是$(document).ready(function(){/*...*/})的简写形式，是在DOM加载完成后执行的回调函数，并且只会执行一次。
+  参考博客：
+  https://blog.csdn.net/stpice/article/details/80586444
