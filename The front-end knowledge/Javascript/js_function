@@ -33,6 +33,10 @@
          })();
  ⑤、文档就绪函数：window.onload = function(){ }
        jquery中： $(function(){ }) 或者 $(ducment).ready(function(){}) 
+       
+ ⑥、箭头函数：没有function 关键字、return 关键字和花括号。
+    如：const x = (x, y) => x * y;
+    调用：x(x,y);
  
 
  
@@ -41,6 +45,49 @@
          2、js函数参数，无固定类型，参数类型由调用者决定。
          3、函数表达式类型函数，又名匿名函数，因为函数没有自己的名称，在调用函数时和变量名共用同一名称。
          4、表达式型函数，不能再申明之前调用(即不具有函数提升性)。
+         5.IE11 或更早的版本不支持箭头函数。
+         
+         
+         
+         
+4.js函数用法注意点：
+  ①、可用在表达式中
+    如：function myFunction(a, b) {
+           return a * b;
+        }
+        var x = myFunction(4, 3) * 2;
+        
+        
+  ②、js的 typeof 运算符会为函数返回 "function"，但函数也是对象，
+     arguments.length 会返回函数被调用时收到的参数个数；
+     如：function myFunction(a, b) {
+           return arguments.length;
+         }  
+         var x = myFunction(4, 3);
+         此时x的值等于2
+         
+         
+  ③、调用: functionName().toString(); 整个方法将以字符串的形式返回。
+     
+     
+         
+     
+     
+     
+     
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
         
         
               
