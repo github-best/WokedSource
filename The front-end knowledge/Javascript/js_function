@@ -31,6 +31,9 @@
      如：(function () {
              var x = "Hello!!";      //我会调用我自己
          })();
+ ⑤、文档就绪函数：window.onload = function(){ }
+       jquery中： $(function(){ }) 或者 $(ducment).ready(function(){}) 
+ 
 
  
  
