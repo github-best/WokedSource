@@ -9,7 +9,7 @@
           判断输入框中输入的日期格式为yyyy-mm-dd和正确的日期
           */
           function isDate(dateString) {
-          var reg = /^[1-2]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+          var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
           var str = dateString;
           var arr = reg.exec(str);
           /**如果没有输入时间，可继续查询 */
