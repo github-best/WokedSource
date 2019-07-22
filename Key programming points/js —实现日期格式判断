@@ -1,0 +1,30 @@
+1.在SSM框架中，由于SpringMVC在控制层接收数据之前，要对数据进行格式转换，对于时间而言，如果用户输入的数据非规定好的时间格式，
+  如：yyyy-MM-dd；SpringMVC将无法进行格式转换，将报格式转换异常，这时就需要在前端js中对时间格式进行判断，如果不是时间格式，直接在js中return；
+  结束查询，在输入框旁边显示错误信息即可。
+  
+  实现步骤：
+  第一步：input标签后添加 <span id="formatError" class="error"></span>
+  第二部：js代码中书写时间格式判断函数，如判断(yyyy-MM-dd)时间类型：
+          /**
+          判断输入框中输入的日期格式为yyyy-mm-dd和正确的日期
+          */
+          function isDate(dateString) {
+          var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
+          var str = dateString;
+          var arr = reg.exec(str);
+          /**如果没有输入时间，可继续查询 */
+          if (str=="") return true;
+          if (reg.test(str)&&RegExp.$2<=12&&RegExp.$3<=31){
+              /**如果时间匹配，可查询 */
+              return true;
+          }
+          return false;
+          }
+  
+  第三部：在查询js中，先调用isDate($("#idName").datebox('getValue'));方法进行时间格式的判断,
+          如果为false ，document.getElementById("formatError").innerHTML="<font color = 'red'>日期格式错误!</font>";
+          如果为true，document.getElementById("formatError").innerHTML="";
+          
+  
+
+
