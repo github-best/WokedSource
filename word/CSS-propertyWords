@@ -25,7 +25,7 @@
 
 12.文本装饰   text-decoration  值  underline、overline(上划线)、line-through、blink(闪烁)
 
-13.
+13.处理文本间的空格  white-space  值 normal(合并多于空白空格，但不换行)、pre-wrap(合并多于空白空格,保留换行)
 
 
 
