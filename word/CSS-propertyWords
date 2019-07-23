@@ -27,6 +27,77 @@
 
 13.处理文本间的空格  white-space  值 normal(合并多于空白空格，但不换行)、pre-wrap(合并多于空白空格,保留换行)
 
+14.文本排版方向 direction  值  ltr(从左方向排版)、rtl(从右方向排版)
+
+15.指定字体系列  font-family 值  Cursive(草书)...
+
+16.字体风格  font-style   值  normal、italic(文本斜体显示)、oblique(文本倾斜显示)
+
+17.字体变形  font-variant  值  small-caps (加上小帽子)
+
+18.字体粗细  font-weight  值  normal、bold(加粗)、bolder(最粗)、lighter、100-900(为加粗9个等级，400==normal,700==bold)
+
+19.字体大小  font-size   值  _px、_em、父元素的百分比； 1em 等于当前的字体尺寸
+
+20.字体进行水平拉升  font-stretch 
+
+21.CSS 框模型 (Box Model) ：
+   padding  内边距
+   margin   外边距
+   border   边框
+   width    宽度
+   height   高度
+   值 ---------------> _px;
+
+22.
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
