@@ -26,6 +26,16 @@
  ③、构造器函数(构造方法)：var myFunction = new Function("a", "b", "return a * b");
     调用：var x = myFunction(4, 3);
     
+    // 这是函数构造器：
+    function myFunction(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName  = arg2;
+    }
+    // 创建了一个新对象：
+    var x = new myFunction("Bill", "Gates");
+    x.firstName;                             // 会返回 "Bill"
+    
+    
  ④、自调用函数：
     在函数后跟一对小括号，函数将自动执行方法体，这样的函数叫自调用函数或立即执行函数。
      如：(function () {
