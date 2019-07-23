@@ -47,10 +47,14 @@
    border   边框
    width    宽度
    height   高度
-   值 ---------------> _px;
+   值 ---------------> _px、_em、a%;
 
-22.
-   
+22.单边内边距属性:
+   padding-top
+   padding-right
+   padding-bottom
+   padding-left
+   值 ---------------> _px、_em、a%;
 
 
 
