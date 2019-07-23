@@ -21,7 +21,13 @@
 
 10.字母间的间隔  letter-spacing: _px; letter-spacing:_em;
 
-11.
+11.文本大小写转换  text-transform  值  uppercase(全部转换为大写)、lowercase(全部转换为小写)、capitalize(所有单词首字母大写)
+
+12.文本装饰   text-decoration  值  underline、overline(上划线)、line-through、blink(闪烁)
+
+13.
+
+
 
 
 
