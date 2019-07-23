@@ -11,4 +11,17 @@
 
 5.在可视区固定图片不滑动  background-attachment:fixed
 
-6.
+6.文本首行缩进  text-indent: num em; 注意：em为西欧文字排版单位。
+
+7.按父元素的百分比缩进   text-indent: a%;
+
+8.text-align 是一个基本的属性，它会影响一个元素中的文本行互相之间的对齐方式  值 left、right、center
+
+9.字体之间间隔  word-spacing: _px; word-spacing: _em;
+
+10.字母间的间隔  letter-spacing: _px; letter-spacing:_em;
+
+11.
+
+
+
