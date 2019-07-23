@@ -1,1 +1,14 @@
 
+~ 以下是css属性单词汇总：
+
+1.元素的背景色设置  background-color
+
+2.元素中文本的文本框向外扩展  padding: _px;  这里的值为像素。
+
+3.元素的背景图像   background-image: url(/i/eg_bg_04.gif);   这里的值为图片的url。
+
+4.设置图片在背景中的位置  background-position  值  left、right、top、bottom、center 或者 a%  b%  或者  a px b px 
+
+5.在可视区固定图片不滑动  background-attachment:fixed
+
+6.
