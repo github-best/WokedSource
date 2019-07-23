@@ -1,0 +1,7 @@
+第一步：建库  create database if not exists mydatabase charset utf8;
+第二步：进入库  use mydatabase;
+第三步：ql文件中若含有中文，出现乱码，解决办法：在导入sql文件前，修改数据库的字符设置： set names utf8;  
+第四步：导入sql脚本   source  文件路径;
+
+参考博客地址：
+https://blog.csdn.net/u014487509/article/details/45508007
