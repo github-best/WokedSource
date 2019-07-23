@@ -2,8 +2,8 @@
   a.数组  b.等号右边括起来的键值对。
   
 2.js对象的组成元素：
- a.属性   b.方法
- 如：var myObject = {
+  a.属性   b.方法
+  如：var myObject = {
        firstName:"Bill",
        lastName: "Gates",
        fullName: function () {
