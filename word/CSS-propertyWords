@@ -76,7 +76,13 @@
        border-right-width(右边框宽度)
        
        
-28.
+28.元素边框设置颜色  border-color   它一次可以接受最多 4 个颜色值。 值：可以使用任何类型的颜色值，例如可以是命名颜色，也可以是十六进制和 RGB 值。
+
+29.定义单边边框颜色：
+       border-top-color(上边框颜色)
+       border-bottom-color(下边框颜色)
+       border-left-color(左边框颜色)
+       border-right-color(右边框颜色)
 
                                  
 
