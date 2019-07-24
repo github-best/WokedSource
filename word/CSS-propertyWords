@@ -69,7 +69,7 @@
        
 26.元素边框的宽度   border-width   值    _px 或 _em;   thin 、medium（默认值） 和 thick；
 
-27.定义单边宽度：
+27.定义单边边框宽度：
        border-top-width(上边框宽度)
        border-bottom-width(下边框宽度)
        border-left-width(左边框宽度)
