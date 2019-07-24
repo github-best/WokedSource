@@ -59,7 +59,7 @@
 23.边框样式  border-style    值   dotted(点线式边框)、dashed(虚线)、solid(实线)、double(双重的)、 groove(凹槽，槽线)、ridge(山脊,山脉)
                                  inset(内凹)、outset(外突)
                                  
-24.边框样式，为一个边框定义多个样式，值之间可以不用逗号分割，border-style: solid dotted dashed double;
+24.边框样式，为一个边框定义多个样式，值之间可以不用逗号分割，border-style: solid dotted dashed double; border-style 的默认值是 none(没有边框)
 
 25.为元素框的某一个边设置边框样式:
        border-top-style(上边框样式)
