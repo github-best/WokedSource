@@ -66,6 +66,18 @@
        border-bottom-style(下边框样式)
        border-left-style(左边框样式)
        border-right-style(右边框样式)
+       
+26.元素边框的宽度   border-width   值    _px 或 _em;   thin 、medium（默认值） 和 thick；
+
+27.定义单边宽度：
+       border-top-width(上边框宽度)
+       border-bottom-width(下边框宽度)
+       border-left-width(左边框宽度)
+       border-right-width(右边框宽度)
+       
+       
+28.
+
                                  
 
 
