@@ -86,7 +86,17 @@
        
 30.透明边框   border-color  若：值 = transparent;表示透明边框。
 
-31.
+31.元素外边距属性margin    值  margin 属性接受任何长度单位，可以是像素(px)、英寸(in)、毫米(mm)或 em；margin : a%;这个百分比是相对于父标签而言的。
+
+32.为整个边框设置外边距  margin : 10px 0px 15px 5px;  由于把整个边框看做了一个整体，值之间不用分割。对应的顺序为：top right bottom left
+
+33.元素单边外边距属性：
+      margin-top(上外边距)
+      margin-right(右外边距)
+      margin-bottom(下底外边距)
+      margin-left(左外边距)
+      
+34.
 
                                  
 
