@@ -83,6 +83,10 @@
        border-bottom-color(下边框颜色)
        border-left-color(左边框颜色)
        border-right-color(右边框颜色)
+       
+30.透明边框   border-color  若：值 = transparent;表示透明边框。
+
+31.
 
                                  
 
