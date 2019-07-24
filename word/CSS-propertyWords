@@ -96,7 +96,14 @@
       margin-bottom(下底外边距)
       margin-left(左外边距)
       
-34.
+34.元素展现属性 display    值   block(块级显示)、inline(一行显示)、none(没有框);
+
+35.元素定位属性  position  值   static、relative、absolute、fixed
+
+36.元素中的内容溢出属性  overflow   值 scroll  (添加滚动条，下一行显示剩余内容)、auto(当文本满了时，再添加滚动条)
+
+37.
+
 
                                  
 
