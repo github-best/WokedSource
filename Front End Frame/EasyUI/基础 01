@@ -1,5 +1,8 @@
 
 1.如何在html文件中引入 easyui?
+ 第一步：下载jquery-easyui.zip包，并解压
+ 第二步：在WebContent(webapp)目录下，创建一个js包，把解压后的easyui包拷贝到js中
+ 第三步：在页面中引入css，js。
   在html的head标签中引入easyui的css、js即可。
   ①、在html页面中引入easyui的css：
       <!-- 引入css文件，不限制顺序 -->
