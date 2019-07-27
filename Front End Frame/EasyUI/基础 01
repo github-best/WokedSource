@@ -10,3 +10,10 @@
       <!-- 引入js文件，限制顺序,先加jquery再加jquery.easyui -->
       <script type="text/javascript" src="../js/jquery.min.js"></script>   
       <script type="text/javascript" src="../js/jquery.easyui.min.js"></script> 
+      
+      
+ 2.为标签添加easyui组件的样式，所有的easyui组件的样式均按如下格式设置：
+    easyui-组件名
+    如果要用easyui组件自身的属性时，必须在普通标签上书写data-options属性名，
+    内容为，key:value,key:value,如果value时string类型加引号，外面双引号，则里面单引号
+    注意：要在普通标签中书写data-options属性的前提是:在普通标签上加clsss="easyui-组件名"
