@@ -1,0 +1,8 @@
+
+1.在路径允许的情况下：对于 Dynamic Web项目：WebContent目录下的页面可以直接发起访问；
+  而对于maven项目：webapp目录下的页面可以直接发起访问，而 WEB-INF下的页面需要RequestMapping("/url"),写代码进行访问，
+  总之，除了直接能访问的页面之外，例如像maven项目中的WEB-INF目录，这个目录我们也可以不要，自己在webapp下创建一个Folder，
+  然后，在SpringMVC.xml文件中，配置ViewResolver时，加一个匹配前缀路径标签即可。
+  
+2.  
+  
