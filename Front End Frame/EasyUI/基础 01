@@ -14,6 +14,9 @@
       <script type="text/javascript" src="../js/jquery.min.js"></script>   
       <script type="text/javascript" src="../js/jquery.easyui.min.js"></script> 
       
+  easyui搭建环境参考网页：
+  https://jingyan.baidu.com/article/67508eb4342f9f9cca1ce426.html
+      
       
  2.为标签添加easyui组件的样式，所有的easyui组件的样式均按如下格式设置：
     easyui-组件名
