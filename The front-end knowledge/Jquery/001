@@ -24,7 +24,7 @@
 5.Jquery给html元素赋值： 
   ---------> ${"#id"}.val("具体值")
   
-6.
+6.jquery遍历函数：https://blog.csdn.net/honey_th/article/details/7404273
   
    
   
