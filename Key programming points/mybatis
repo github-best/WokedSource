@@ -1,0 +1,2 @@
+1.若页面没有传递主键id值，在插入数据后，把主键映射到实体的方法：在<insert></insert>标签中加如下属性：
+  如： ---------------------------> useGeneratedKeys="true"  keyProperty="UserId">，默认值为 false，此属性只对insert、uptate起作用。
