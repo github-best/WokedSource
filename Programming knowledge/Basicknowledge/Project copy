@@ -5,6 +5,7 @@
    4.选择拷贝pom.xml文件到新建工程pom.xml
    
    备注:如果直接复制工程,要改的地方太多,不易操作.
+        另外在文件编辑,操作时,我们选择Project Explor  或者 package Explor视图均可.
    
    
    
