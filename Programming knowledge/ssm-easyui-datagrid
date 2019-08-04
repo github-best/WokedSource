@@ -22,4 +22,51 @@
   方法二:
      javascript版                       
      <%=request.getContextPath()%>
+     在请求路径url上加上-----------------> <%=request.getContextPath()%>
+     如 url: '<%=request.getContextPath()%>/XXX',
+     
+    注意:datagrid前端页面和后端控制层约定:
+         1.若后端控制层直接返回List<T>类型的json数据,datagrid将不予以分页显示
+         2.若想要数据分页显示,datagrid要求前端数据必须以如下格式的json数据返回:
+          {
+	 "total": 3,
+	 "rows": [
+		{
+	          "id": 1,
+		  "name": "宋江",
+		  "sex": "male",
+		  "birthday": "1992-01-01 01:01:01",
+		   "remark": "宋大哥"
+		 }]
+           }
+	   
+	   
+4.datagrid如何对后端返回的数据进行分页显示?
+
+  第一步:pom.xml文件中引入依赖
+        <dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>
+	    <version>5.1.2</version>
+	</dependency>
+	
+  第二步:pageInterceptor插件的配置
+        若在mybatis.xml文件中进行配置,配置如下即可:
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="properties" value="mysql" />
+			<property name="offsetAsPageNum" value="true" />
+			<property name="rowBoundsWithCount" value="true" />
+			<property name="pageSizeZero" value="false" />
+			<property name="reasonable" value="true" />
+		</plugin>
+	</plugins> 
+	
+	
+ 
+  
+     
+     
+
+     
     
