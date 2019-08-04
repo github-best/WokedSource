@@ -61,6 +61,74 @@
 			<property name="reasonable" value="true" />
 		</plugin>
 	</plugins> 
+        若在spring.xml文件中进行配置,配置如下(2种配置选其一即可):
+	<property name="plugins">
+		<array>
+			<bean class="com.github.pagehelper.PageInterceptor">
+				<property name="properties">
+					<value>
+						helperDialect=mysql
+					</value>
+				</property>
+			</bean>
+		</array>
+	</property>
+	
+   第三步:在后端控制层的方法中添加连个参数: -------------------> Integer page,Integer rows
+          datagrid在向页面发送起请求时，默认传递page、和rows
+	  两个参数到后端请求分页
+	  page 当前页码
+          rows 传当前页行数，页面大小
+	  
+	  关键代码示例:
+	  PageHelper.startPage(page, rows);
+	  List<User> list = userService.findAll();
+	  PageInfo<User> pageInfo = new PageInfo<>(list);
+	  
+   第四步:创建Result结果类
+       public class Result {
+	    private Integer total;
+
+	    private List<?> rows;
+
+	    public Result() {}
+
+	    public Result(Integer total, List<?> rows) {
+		this.total = total;
+		this.rows = rows;
+	    }
+
+	    public Integer getTotal() {
+		return total;
+	    }
+
+	    public void setTotal(Integer total) {
+		this.total = total;
+	    }
+
+	    public List<?> getRows() {
+		return rows;
+	    }
+
+	    public void setRows(List<?> rows) {
+		this.rows = rows;
+	    }
+
+	    @Override
+	    public String toString() {
+		return "Result [total=" + total + ", rows=" + rows + "]";
+	    }
+    
+       }
+       
+     第五步:根据页面PageInfo对象封装结果对象,返回结果对象
+	   //表的总记录数
+	   int total = (int)pageInfo.getTotal();
+	   Result result = new Result();
+	   result.setTotal(total);
+	   result.setRows(list);
+	   return  result;
+	  
 	
 	
  
