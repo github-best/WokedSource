@@ -3,6 +3,8 @@
   ②.选择Maven菜单中的------------>Add Dependency
   ③.在输入框中填写groupId  或者  直接在输入框中填写项目名称.
   
+  此时如果还没有 Maven Dependencies update项目.
+  
   
   
   
