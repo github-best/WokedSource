@@ -9,6 +9,7 @@
   大差不多,稍有区别,但都是从后端获取数据的地址,
   但是在datagrid中,本身无法直接获取项目名称,所以在url前需要加一个获取项目名称的取值操作,
   方法一:
+     el表达式取值法
      ①.jsp页面中引入:
       <%
 	     String path = request.getContextPath();
@@ -19,4 +20,6 @@
        如 url:'${pageContext.request.contextPath}/XXX',
        
   方法二:
+     javascript版                       
+     <%=request.getContextPath()%>
     
