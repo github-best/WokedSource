@@ -129,7 +129,7 @@
 	   result.setRows(list);
 	   return  result;
 	  
-     注意:在后端控制层,返回的数据,在类上加上别忘了加@ResponseBody注解
+     注意:在后端控制层,返回的数据,在类上别忘了加@ResponseBody注解
          另外:datagrid在取值时,实际上还是利用了数学中的函数思想,变量<--->值,程序中的 键<---->值对思想,
 	 例如在模仿json数据时,把json数据存入一个文件中,然后datagrid的url指定json数据的文件地址,
 	 在启动服务器后,访问页面,然后便能加载到json数据.
