@@ -1,0 +1,22 @@
+1.datagrid是什么?
+  datagrid实际上是一个,带有自己css美化后的表格(table)或数据网.
+  
+2.datagrid的实现方式有哪些?
+  参考博客:
+  https://blog.csdn.net/zhang5476499/article/details/80189395
+  
+3.datagrid中的属性url是什么,是RequesMapping中的路径吗?
+  大差不多,稍有区别,但都是从后端获取数据的地址,
+  但是在datagrid中,本身无法直接获取项目名称,所以在url前需要加一个获取项目名称的取值操作,
+  方法一:
+     ①.jsp页面中引入:
+      <%
+	     String path = request.getContextPath();
+	     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			  + path + "/";
+      %>
+     ②. 在请求路径url上加上--------------> ${pageContext.request.contextPath}
+       如 url:'${pageContext.request.contextPath}/XXX',
+       
+  方法二:
+    
