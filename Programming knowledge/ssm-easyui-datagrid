@@ -74,7 +74,7 @@
 		</array>
 	</property>
 	
-   第三步:在后端控制层的方法中添加连个参数: -------------------> Integer page,Integer rows
+   第三步:在后端控制层的方法中添加2个参数: -------------------> Integer page,Integer rows
           datagrid在向页面发送起请求时，默认传递page、和rows
 	  两个参数到后端请求分页
 	  page 当前页码
