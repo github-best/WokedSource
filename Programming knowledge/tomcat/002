@@ -1,5 +1,5 @@
 1.tomcat如何对磁盘文件进行访问，访问路径该怎样配置?
-  ①、创建docBase磁盘路径
+  ①、创建docBase磁盘路径，其值可以是绝对路径，也可以相对于tomcat取值
   ②、在tomcat的server.xml文件中找到<host></host>标签，把标签：<Context path="/hello"  docBase="C:\source\picture\upload" reloadable="true"/>
      放入其中。
   ③、重新启动tomcat服务器,对磁盘文件进行访问.
