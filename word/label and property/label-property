@@ -9,7 +9,7 @@
   disabled---------------->系统值   "disabled"(标签失效，死亡)  
   enabled----------------->系统值   "enabled"(激活，生效)
   
-  备注：input标签的type值,决定了input标签的功能.
+  备注：input标签的type值,决定了input标签的功能，name值是传递给后台的真实值。
   
 4.
   
