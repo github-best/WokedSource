@@ -6,6 +6,9 @@
   备注：1.path是一个虚拟路径映射docBase磁盘路径,path值，可以随意定义，在项目中，必须以其值在webaapp下创建一个普通的文件夹虚拟映射磁盘路径
        2.访问测试方法,如：http://localhost:8080/hello/h.jpg
        
+  参考博客：
+  https://blog.csdn.net/jintaohahahaha/article/details/50210439
+       
        
        
        
