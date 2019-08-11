@@ -38,7 +38,35 @@
 7.html标记文本文件没有固定的模板，如：在html文件中，只给个:-----------> 请输入 <input/>，用浏览器打开，却可以看到：请输入+输入框，
   这就说明，浏览器在解析html文件时，语法比较宽松，没有固定语法格式，但对于编程人员来说，一般约定俗成要写好文件结构。
   
+8.post、get提交乱码问题是如何解决的?
+  ①若是post方式乱码：
+  方法一：在web.xml文件中配置编码过滤器(对所有post提交起作用)：
+         <filter>
+            <filter-name>charsetFilter</filter-name>
+            <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+               <init-param>
+                  <param-name>encoding</param-name>
+                  <param-value>UTF-8</param-value>
+              </init-param>
+              <init-param>
+                 <param-name>forceEncoding</param-name>
+                 <param-value>true</param-value>
+              </init-param>
+         </filter>
+         
+  方法二：在requst，response解析数据时，设置编码编码格式：
+         request.setCharacterEncoding("utf-8");
+         response.setCharacterEncoding("utf-8");
+         
+         
+  ②、若是get提交方式乱码：
+     get提交由于，参数是通过路径传输的，所以我们只需对URI(Uniform Resource Identifier)T统一资源鉴定进行编码格式设置即可，
+     具体做法：修改tomcat的配置文件server.xml：配置属性---------> ConnectorURIEncoding="UTF-8"
+     
+     
 
+ 
+  
  
  
  
