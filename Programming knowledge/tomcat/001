@@ -1,18 +1,42 @@
 1.Tomcat 默认配置的最大请求数是 150，也就是说同时支持 150 个并发，
   当然了，也可以将其改大。当某个应用拥有 250 个以上并发的时候，应考虑应用服务器的集群。
   
-  
+2.tomcat对java虚拟机的内存大小配置，VM 虚拟存贮器（Virtual Memory）的配置
+  参数解释：
+  JVM内存包含两种：堆内存 和 非堆内存
+  服务器一般设置-Xms、-Xmx相等以避免在每次GC 后调整堆的大小 
+  -Xms512m         初始堆内存
+  -Xmx512m         最大堆内存
+  -XX:PermSize=64M        初始非堆内存
+  -XX:MaxPermSize=128M    最大非堆内存
+
+ 
+  最低配置：
+  -Xmx512m
+  -XX:MaxPermSize=256m
   
 
   
-3.安装的tomcat的服务路径和项目的发布路径是什么?
+  
+3.安装的tomcat的服务路径和项目的部署路径是什么?
   有3个路径可选:
   ①：工作空间作为服务路径，workspace metadata,
-     其项目的发布路径是：
+     其项目的部署路径是：
      ----------------> 工作空间路径\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
      
   ②：本地tomcat服务器作为服务路径，Tomcat installation,
-    其项目的发布路径是：
+    其项目的部署路径是：
     ----------------->  tomcat安装目录\webapps
     
-  ③：自定义服务路径，
+  ③：自定义服务路径，自定义项目部署路径
+  
+  备注：1.当项目发布时，tomcat把静态资源部署在部署路径下，包括页面文件，css，图片等
+       2.一个服务路径对应一个server.xml文件，如 tomcat安装目录下有个server.xml文件，工作空间下，
+         在eclipse集成tomcat时，会自动生成一个server项目，里面有个server.xml文件，另外在工作空间的目录下也有个server目录，
+         里面也有个server.xml文件，若自定义服务目录，在自定义服务目录下，将自动生成一个server.xml文件。
+         
+         
+         
+         
+       
+  
