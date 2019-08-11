@@ -1,0 +1,138 @@
+1.datagrid是什么?
+  datagrid实际上是一个,带有自己css美化后的表格(table)或数据网.
+  
+2.datagrid的实现方式有哪些?
+  参考博客:
+  https://blog.csdn.net/zhang5476499/article/details/80189395
+  
+3.datagrid中的属性url是什么,是RequesMapping中的路径吗?
+  大差不多,稍有区别,但都是从后端获取数据的地址,
+  但是在datagrid中,本身无法直接获取项目名称,所以在url前需要加一个获取项目名称的取值操作,
+  方法一:
+     el表达式取值法
+     ①.jsp页面中引入:
+      <%
+	     String path = request.getContextPath();
+	     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			  + path + "/";
+      %>
+     ②. 在请求路径url上加上--------------> ${pageContext.request.contextPath}
+       如 url:'${pageContext.request.contextPath}/XXX',
+       
+  方法二:
+     javascript版                       
+     <%=request.getContextPath()%>
+     在请求路径url上加上-----------------> <%=request.getContextPath()%>
+     如 url: '<%=request.getContextPath()%>/XXX',
+     
+    注意:datagrid前端页面和后端控制层约定:
+         1.若后端控制层直接返回List<T>类型的json数据,datagrid将不予以分页显示
+         2.若想要数据分页显示,datagrid要求前端数据必须以如下格式的json数据返回:
+          {
+	 "total": 3,
+	 "rows": [
+		{
+	          "id": 1,
+		  "name": "宋江",
+		  "sex": "male",
+		  "birthday": "1992-01-01 01:01:01",
+		   "remark": "宋大哥"
+		 }]
+           }
+	   
+	   
+4.datagrid如何对后端返回的数据进行分页显示?
+
+  第一步:pom.xml文件中引入依赖
+        <dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>
+	    <version>5.1.2</version>
+	</dependency>
+	
+  第二步:pageInterceptor插件的配置
+        若在mybatis.xml文件中进行配置,配置如下即可:
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="properties" value="mysql" />
+			<property name="offsetAsPageNum" value="true" />
+			<property name="rowBoundsWithCount" value="true" />
+			<property name="pageSizeZero" value="false" />
+			<property name="reasonable" value="true" />
+		</plugin>
+	</plugins> 
+        若在spring.xml文件中进行配置,配置如下(2种配置选其一即可):
+	<property name="plugins">
+		<array>
+			<bean class="com.github.pagehelper.PageInterceptor">
+				<property name="properties">
+					<value>
+						helperDialect=mysql
+					</value>
+				</property>
+			</bean>
+		</array>
+	</property>
+	
+   第三步:在后端控制层的方法中添加2个参数: -------------------> Integer page,Integer rows
+          datagrid在向页面发送起请求时，默认传递page、和rows
+	  两个参数到后端请求分页
+	  page 当前页码
+          rows 传当前页行数，页面大小
+	  
+	  关键代码示例:
+	  PageHelper.startPage(page, rows);
+	  List<User> list = userService.findAll();
+	  PageInfo<User> pageInfo = new PageInfo<>(list);
+	  
+   第四步:创建Result结果类
+       public class Result {
+	    private Integer total;
+
+	    private List<?> rows;
+
+	    public Result() {}
+
+	    public Result(Integer total, List<?> rows) {
+		this.total = total;
+		this.rows = rows;
+	    }
+
+	    public Integer getTotal() {
+		return total;
+	    }
+
+	    public void setTotal(Integer total) {
+		this.total = total;
+	    }
+
+	    public List<?> getRows() {
+		return rows;
+	    }
+
+	    public void setRows(List<?> rows) {
+		this.rows = rows;
+	    }
+
+	    @Override
+	    public String toString() {
+		return "Result [total=" + total + ", rows=" + rows + "]";
+	    }
+    
+       }
+       
+     第五步:根据页面PageInfo对象封装结果对象,返回结果对象
+	   //表的总记录数
+	   int total = (int)pageInfo.getTotal();
+	   Result result = new Result();
+	   result.setTotal(total);
+	   result.setRows(list);
+	   return  result;
+	  
+     注意:在后端控制层,返回的数据,在类上别忘了加@ResponseBody注解
+         另外:datagrid在取值时,实际上还是利用了数学中的函数思想,变量<--->值,程序中的 键<---->值对思想,
+	 例如在模仿json数据时,把json数据存入一个文件中,然后datagrid的url指定json数据的文件地址,
+	 在启动服务器后,访问页面,然后便能加载到json数据.
+   
+   
+   
