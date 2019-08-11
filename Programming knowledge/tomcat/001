@@ -1,0 +1,18 @@
+1.Tomcat 默认配置的最大请求数是 150，也就是说同时支持 150 个并发，
+  当然了，也可以将其改大。当某个应用拥有 250 个以上并发的时候，应考虑应用服务器的集群。
+  
+  
+  
+
+  
+3.安装的tomcat的服务路径和项目的发布路径是什么?
+  有3个路径可选:
+  ①：工作空间作为服务路径，workspace metadata,
+     其项目的发布路径是：
+     ----------------> 工作空间路径\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
+     
+  ②：本地tomcat服务器作为服务路径，Tomcat installation,
+    其项目的发布路径是：
+    ----------------->  tomcat安装目录\webapps
+    
+  ③：自定义服务路径，
