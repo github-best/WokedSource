@@ -10,6 +10,17 @@
           2.一个服务路径对应一个server.xml文件。
           
           
+2.关于request请求的几个重要方法?
+  ①、获取请求协议头 http ------------------------------------> request.getScheme()
+  ②、获取服务的ip 如localhost--------------------------------> request.getServerName()
+  ③、获取服务的端口号----------------------------------------> request.getServerPort()
+  ④、获取编码方式-------------------------------------------> request.getContentType()
+  
+  
+  另外若在js代码中可以用:"${pageContext.request.contextPath}"来获取项目名称。
+  
+          
+          
           
           
           
