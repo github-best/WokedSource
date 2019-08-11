@@ -1,20 +1,32 @@
-1.tomcat如何对磁盘文件进行访问，访问路径该怎样配置?
-  ①、创建docBase磁盘路径，其值可以是绝对路径，也可以相对于tomcat取值
-  ②、在tomcat的server.xml文件中找到<host></host>标签，把标签：<Context path="/hello"  docBase="C:\source\picture\upload" reloadable="true"/>
+
+一、把图片上传到磁盘上，tomcat如何对磁盘文件进行访问，访问路径的配置和图片的回显
+  1、创建docBase磁盘路径，其值可以是绝对路径，也可以相对于tomcat取值
+  2、在tomcat的server.xml文件中找到<host></host>标签，把标签：<Context path="/hello"  docBase="C:\source\picture\upload" reloadable="true"/>
      放入其中。
-  ③、重新启动tomcat服务器,对磁盘文件进行访问.
-  备注：1.path是一个虚拟路径映射docBase磁盘路径,path值，可以随意定义，在项目中，必须以其值在webaapp下创建一个普通的文件夹虚拟映射磁盘路径
-       2.访问测试方法,如：http://localhost:8080/hello/h.jpg
+  3、重新启动tomcat服务器,对磁盘文件进行访问.
+     备注：1.path是一个虚拟路径映射docBase磁盘路径,path值，可以随意定义，在项目中，必须以其值在webaapp下创建一个普通的文件夹虚拟映射磁盘路径
+          2.访问测试方法,如：http://localhost:8080/hello/h.jpg
        
-  参考博客：
-  https://blog.csdn.net/jintaohahahaha/article/details/50210439
+     参考博客：
+     https://blog.csdn.net/jintaohahahaha/article/details/50210439
   
   
   
-2.项目中,在页面上对图片是如何回显的?
-  在页面中加入<img/>标签，如：<img style="width: 150px; height: 200px" src="http://localhost/hello/h.jpg"/>
-  浏览器将自动根据src属性去磁盘路径，加载图片。
-  备注：src----------->全称：同步遥控（synchrostep remote control  远程同步控制），实际上就相当于一个网址，浏览器根据地址，加载图片。
+  4.项目中,在页面上对图片是如何回显的?
+    在页面中加入<img/>标签，如：<img style="width: 150px; height: 200px" src="http://localhost/hello/h.jpg"/>
+    浏览器将自动根据src属性去磁盘路径，加载图片。
+    备注：src----------->全称：同步遥控（synchrostep remote control  远程同步控制），实际上就相当于一个网址，浏览器根据地址，加载图片。
+    
+
+二、把图片上传到tomcat服务器上(或自定义部署路径下)，怎么实现图片的上传和回显?
+    1.在项目总的webapp目录下任意定义一个虚拟文件夹，如upload。
+    2.获取项目部署路径+文件存放目录： String url = request.getSession().getServletContext().getRealPath("/upload");
+    3.mutipartFile.transferTo(newFile);上传图片到项目部署路径下的虚拟目录中。
+    4.获取文件的新名称拼接虚拟路径，入库保存。
+    5.jsp页面img标签的src属性根据地址去加载图片。
+    
+   
+
        
        
        
