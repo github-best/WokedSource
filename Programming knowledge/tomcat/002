@@ -7,7 +7,7 @@
      备注：1.path是一个虚拟路径映射docBase磁盘路径,path值，可以随意定义，在项目中，必须以其值在webaapp下创建一个普通的文件夹虚拟映射磁盘路径
           2.访问测试方法,如：http://localhost:8080/hello/h.jpg
        
-     参考博客：
+     参考博客：..
      https://blog.csdn.net/jintaohahahaha/article/details/50210439
   
   
@@ -27,7 +27,12 @@
     
     备注：1.img标签路径访问规则：通过访问项目下的虚拟目录中的某个文件从而实现图片的回显
             如："http://localhost:8080/ssm-picture-actions/upload/503dd533-0d06-4e2f-b334-def2177daf68.jpg 
-            与把图片保存到指定的某个磁盘下不同的是，若是把图片保存到磁盘，src路径中无需加项目名称。
+            与把图片保存到指定的某个磁盘下不同的是，若是把图片保存到磁盘，src路径中可直接写"upload/文件名称"，
+            但是需在server视图的module 菜单中配置虚拟路径，配置path和 document base，其中path为虚拟路径值，document base为磁盘路径，
+            但需注意的是，path值前需加一个斜杠，document base磁盘路径，路径之间用一个反斜杠进行分割，
+            网上的其他方式如在server.xml中对host标签添加其他配置，配置虚拟路径，
+            经实际验证，在项目中并不能回显图片。
+            
           
           
           
