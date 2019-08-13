@@ -70,11 +70,13 @@
    request.getScheme()-------------->获取 http 请求协议头
    request.getServerName()---------->获取服务的ip地址(域名) 如localhost
    request.getServerPort()---------->获取服务的端口号
-   
+   request.getContextPath()--------->获取项目名称
    
    request.getContentType()--------->获取请求的编码格式
    
-   另外：session.getServletContext()---------->获取图片等静态资源的部署路径。
+   另外：session.getServletContext()---------->获取webapp根目录路径。
+         ${pageContext.request.contextPath}------>获取项目名称
+         
    
 
    
