@@ -1,4 +1,8 @@
 1.如何用css定位元素在屏幕上的坐标?
+  ①、其中right、left、top、bottom属性，可以用做数学中的单位向量方向，然后组成直角二维向量，然后分别对right、left、top、bottom属性给值，
+     从而可对元素标签，进行定位摆放。
+
+
   参考博客地址：
   https://www.cnblogs.com/qianguyihao/p/8296748.html
   
