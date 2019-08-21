@@ -76,6 +76,10 @@
    
    另外：session.getServletContext()---------->获取webapp根目录路径。
          ${pageContext.request.contextPath}------>获取项目名称
+ 
+ 11.文件的相对路径和绝对路径的找法：
+   参考博客地址：
+   https://blog.csdn.net/qq_34769573/article/details/80445681
          
    
 
